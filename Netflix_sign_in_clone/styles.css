@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 25px 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+nav img {
+    width: 100px;
+}
+
+.form-wrapper {
+    background-color: #1c1c1c;
+    padding: 60px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+}
+
+.form-wrapper h2 {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    margin: 20px 0;
+}
+
+.form-control {
+    height: 50px;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.form-control input {
+    width: 100%;
+    height: 100%;
+    background-color: #333333;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    padding: 16px 20px;
+}
+
+.form-control label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #8c8c8c;
+    pointer-events: none;
+    transition: all 0.1s ease;
+}
+
+.form-control input:is(:focus, :valid) {
+    background: #444;
+    padding-top: 24px;
+    padding-bottom: 8px;
+}
+
+.form-control input:is(:focus, :valid) ~ label {
+    font-size: 0.75rem;
+    transform: translateY(-130%);
+}
+
+button {
+    width: 100%;
+    padding: 14px 0;
+    margin: 10px 0;
+    font-size: 16px;
+    background-color: #e50915;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#code {
+    background-color: #464646;
+}
+
+label, p, small, a {
+    color: #737373;
+}
+
+.form-wrapper a {
+    text-decoration: none;
+    color: white;
+}
+
+#or {
+    text-align: center;
+    color: #737373;
+    margin: 20px 0;
+}
+
+.form-wrapper small {
+    display: block;
+    margin: 15px 0;
+    color: #737373;
+}
+
+.form-wrapper small a {
+    color: #0071eb;
+}
+
+.form-help {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 5px;
+}
+
+.form-wrapper a:hover {
+    text-decoration: underline;
+}
+
+form .form-help :where(label, a) {
+    font-size: 14px;
+}
+
+form button:hover, #code:hover {
+    opacity: 0.8;
+}
+
+/* Accessibility Improvements */
+input:focus, button:focus {
+    outline: 2px solid #0071eb;
+    outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form-wrapper {
+        padding: 40px 20px;
+    }
+
+    .form-wrapper h2 {
+        font-size: 24px;
+    }
+}
