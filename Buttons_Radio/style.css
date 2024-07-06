@@ -1,0 +1,174 @@
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0d1117;
+    color: #6dfff6;
+    text-transform: uppercase;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Container Styles */
+  
+  .container {
+    width: 500px;
+    height: 270px;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Radio Button Styles */
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  li {
+    margin: 10px;
+    position: relative;
+  }
+  
+  label {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+  }
+  
+  .touch {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    opacity: 0;
+  }
+  
+  input[type="radio"]:checked ~ .touch {
+    opacity: 1;
+    animation: explode 0.35s;
+  }
+  
+  .line {
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background-color: #fff;
+    opacity: 0;
+  }
+  
+  .line.zero {
+    top: -21px;
+    left: 11px;
+    transform: translateY(20px);
+  }
+  
+  .line.one {
+    top: -11px;
+    right: -7px;
+    transform: rotate(-55deg) translate(-9px);
+  }
+  
+  .line.two {
+    top: 11px;
+    right: -20px;
+    transform: translate(-9px);
+  }
+  
+  .line.three {
+    top: 35px;
+    right: -8px;
+    transform: rotate(55deg) translate(-9px);
+  }
+  
+  .line.four {
+    top: -11px;
+    left: -8px;
+    transform: rotate(55deg) translate(9px);
+  }
+  
+  .line.five {
+    top: 11px;
+    left: -20px;
+    transform: translate(9px);
+  }
+  
+  .line.six {
+    top: 35px;
+    left: -8px;
+    transform: rotate(-55deg) translate(9px);
+  }
+  
+  .line.seven {
+    bottom: -21px;
+    left: 11px;
+    transform: translateY(-20px);
+  }
+  
+  input[type="radio"]:checked ~ .touch .line {
+    animation: drop 0.9s forwards 0.1s;
+  }
+  
+  @keyframes explode {
+    0% {
+      opacity: 0;
+      transform: scale(10);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes drop {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+      height: 10px;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-2px);
+      height: 0px;
+      opacity: 0;
+    }
+  }
